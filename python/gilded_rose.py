@@ -36,7 +36,7 @@ class GildedRose(object):
                         item.quality = item.quality + 1
 
 
-class Item:
+class Item(object):
     def __init__(self, name, sell_in, quality):
         self.name = name
         self.sell_in = sell_in
@@ -44,3 +44,6 @@ class Item:
 
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
+
+    def __eq__(self, other):
+        return self.name == other.name and self.sell_in == other.sell_in and self.quality == other.quality
